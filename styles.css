@@ -34,7 +34,7 @@ a {
   padding: 0 1em 0em 1em;;
   height: 100%;
   min-width: 0;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .sidebar * {
