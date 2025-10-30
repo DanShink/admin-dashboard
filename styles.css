@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-  --primary-color: rgb(50, 170, 245);
+  --primary-color: #1992d4;
   --background-color: #e2e8f0;
+  --project-card-color: #f0b429;
 }
 
 body {
@@ -149,15 +150,15 @@ a {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr 2fr;
-  padding: 0em 1em 0em 1em;
-  grid-column-gap: 1em;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 2em;
+  padding: 0 1em;
+  min-width: 0;
 }
 
 .header-top-right-icon {
   grid-column: 1 / span 1;
-  justify-self: end;
-  margin-right: 1em;
+  justify-self: center;
 }
 
 .header-top-right-avatar {
@@ -166,12 +167,18 @@ a {
   border-radius: 50%;
   outline: 2px solid black;
   grid-column: 2 / span 1;
+  justify-self: center;
 }
 
 .header-top-right-name {
   font-size: 1.2em;
   font-weight: bold;
   grid-column: 3 / span 1;
+  justify-self: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .header-bottom {
@@ -273,13 +280,35 @@ a {
   grid-row: 2 / span 1;
   background-color: var(--background-color);
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+  min-height: 0;
+  padding-top: 1em;
+}
+
+.main-content-title {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  font-weight: 900;
+  font-size: 1.2em;
 }
 
 .main-content-projects {
   grid-column: 1 / span 1;
   grid-row: 1 / span 2;
+  padding-left: 2em;
+  padding-right: 2em;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.main-content-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+  gap: 1em;
+  justify-content: start;
 }
 
 .main-content-card {
@@ -287,15 +316,43 @@ a {
   border-radius: 10px;
   padding: 1em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.project-card {
+  /* Add left outline with yellow color*/
+  border-left: 10px solid var(--project-card-color);
+  margin-bottom: 1em;
+
+}
+
+.main-content-card-actions {
+  display: grid;
+  justify-content: end;
+  grid-template-columns: auto auto auto;
+  gap: 1.5em;
+}
+
+.main-content-card-title {
+  font-size: 1.2em;
+  font-weight: 900;
 }
 
 .main-content-announcements {
   grid-column: 2 / span 1;
   grid-row: 1 / span 1;
+  padding-right: 2em;
+  overflow-y: auto;
+  min-height: 0;
 }
+
 
 .main-content-trending {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
+  padding-right: 2em;
+  overflow-y: auto;
+  min-height: 0;
 }
 
